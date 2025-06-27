@@ -9,7 +9,12 @@ dotenv.config()
 
 const app = express()
 
-app.use(cors())
+app.use(cors(
+    {
+        origin: 'https://internal-tools-frontend-b8kt-n2c501oul.vercel.app/',
+        credentials: true
+    }
+));
 app.use(express.json())
 
 connectDB();
